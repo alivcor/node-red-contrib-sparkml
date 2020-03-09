@@ -22,7 +22,7 @@ These flows create a dataset, train a model and then evaluate it. Models, after 
 
 There is an example flow and a test dataset available in the 'test' folder. 
   
-**Tip:** You can run 'node-red' (or 'sudo node-red' if you are uning linux/mac) from the folder '.node-red/node-modules/node-red-contrib-sparkml' to avoid confusion.
+**Tip:** You can run 'node-red' (or 'sudo node-red' if you are using linux/mac) from the folder '.node-red/node-modules/node-red-contrib-sparkml' to avoid confusion.
 
 Example Deployment
 ![Deployment](https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/example_flow.png "Deployment")

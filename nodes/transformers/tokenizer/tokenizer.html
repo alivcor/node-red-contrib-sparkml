@@ -1,0 +1,71 @@
+<script type="text/javascript">
+    RED.nodes.registerType('tokenize column',{
+        category: 'sparkml',
+        color: '#f7cac9',
+        defaults: {
+            name: {value:"tokenize"},
+            input: {value: "true", type:"boolean"},
+            output: {value: "true", type:"boolean"},
+            inputCol: {value:"sentence"},
+            outputCol: {value:"words"}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "font-awesome/fa-th",
+        label: function() {
+            return this.name||"tokenize column";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="tokenize column">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-inputCol"><i class="icon-tag"></i>Input Column</label>
+        <input type="text" id="node-input-inputCol" placeholder="">
+    </div>
+	<div class="form-row">
+        <label for="node-input-outputCol"><i class="icon-tag"></i>Output Column</label>
+        <input type="text" id="node-input-outputCol" placeholder="">
+    </div>
+	
+</script>
+
+<script type="text/x-red" data-help-name="tokenize column">
+    <p>A node that splits each sentence into words using Tokenizer. </p>
+    
+    <h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>payload
+			<span class="property-type">array</span>
+		</dt>
+		<dd>the dataset path</dd>
+	</dl>
+
+	<h3>Outputs</h3>
+	<ol class="node-ports">
+		<li>Standard output
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">array</span></dt>
+				<dd>the loaded spark dataset.</dd>
+			</dl>
+		</li>
+		<li>Standard error
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">string</span></dt>
+				<dd>the standard error of the command.</dd>
+			</dl>
+		</li>
+	</ol>
+
+	<h3>Details</h3>
+	<p>
+		This node splits each sentence into words using Tokenizer. 
+	</p>
+	
+
+	
+</script>

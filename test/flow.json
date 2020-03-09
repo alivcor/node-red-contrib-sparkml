@@ -1,0 +1,145 @@
+[
+    {
+        "id": "2966e7c1.a3ef98",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f30f9ea.a9b396",
+        "type": "create sparkml dataset",
+        "z": "2966e7c1.a3ef98",
+        "path": "/Users/abhinandandubey/Desktop/adult.data",
+        "sparkMaster": "local",
+        "sparkApp": "nodered",
+        "fileType": "csv",
+        "scheme": "file",
+        "save": "/Users/abhinandandubey/Desktop/tempspace",
+        "input": "true",
+        "output": "",
+        "trainingPartition": "80",
+        "separator": ",",
+        "shuffle": "",
+        "inferSchema": true,
+        "readHeaders": true,
+        "partitionCol": "",
+        "seed": "",
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "39c2d265.165dfe"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "150f5fd4.2e184",
+        "type": "inject",
+        "z": "2966e7c1.a3ef98",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 300,
+        "y": 80,
+        "wires": [
+            [
+                "f30f9ea.a9b396"
+            ]
+        ]
+    },
+    {
+        "id": "ae49056f.94caf8",
+        "type": "debug",
+        "z": "2966e7c1.a3ef98",
+        "name": "debugonode",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 680,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "39c2d265.165dfe",
+        "type": "load sparkml dataset",
+        "z": "2966e7c1.a3ef98",
+        "name": "loadDatasetNode",
+        "input": "true",
+        "output": "true",
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "b82efb14.54d188",
+                "ae49056f.94caf8"
+            ],
+            [
+                "ae49056f.94caf8"
+            ]
+        ]
+    },
+    {
+        "id": "b82efb14.54d188",
+        "type": "tokenize column",
+        "z": "2966e7c1.a3ef98",
+        "name": "tokenize",
+        "input": "true",
+        "output": "true",
+        "inputCol": "occupation",
+        "outputCol": "occupationTokenized",
+        "x": 240,
+        "y": 380,
+        "wires": [
+            [
+                "ee8a2890.206a48",
+                "5fe75912.85dae8"
+            ],
+            [
+                "ee8a2890.206a48",
+                "5fe75912.85dae8"
+            ]
+        ]
+    },
+    {
+        "id": "ee8a2890.206a48",
+        "type": "debug",
+        "z": "2966e7c1.a3ef98",
+        "name": "debugtokenier",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 700,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5fe75912.85dae8",
+        "type": "calculate term frequencies",
+        "z": "2966e7c1.a3ef98",
+        "name": "tf",
+        "input": "true",
+        "output": "true",
+        "inputCol": "occupationTokenized",
+        "outputCol": "occupationTf",
+        "numFeatures": "2",
+        "x": 410,
+        "y": 500,
+        "wires": [
+            [],
+            []
+        ]
+    }
+]

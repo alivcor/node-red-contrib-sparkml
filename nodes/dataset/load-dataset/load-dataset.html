@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('load sparkml dataset',{
+        category: 'sparkml',
+        color: '#82b74b',
+        defaults: {
+            name: {value:"load dataset"},
+            input: {value: "true", type:"boolean"},
+            output: {value: "true", type:"boolean"}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "inject.png",
+        label: function() {
+            return this.name||"load sparkml dataset";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="load sparkml dataset">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	
+</script>
+
+<script type="text/x-red" data-help-name="load sparkml dataset">
+    <p>A node that loads a data file and divides it into training and test partitions.</p>
+    
+    <h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>payload
+			<span class="property-type">array</span>
+		</dt>
+		<dd>the dataset path</dd>
+	</dl>
+
+	<h3>Outputs</h3>
+	<ol class="node-ports">
+		<li>Standard output
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">array</span></dt>
+				<dd>the loaded spark dataset.</dd>
+			</dl>
+		</li>
+		<li>Standard error
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">string</span></dt>
+				<dd>the standard error of the command.</dd>
+			</dl>
+		</li>
+	</ol>
+
+	<h3>Details</h3>
+	<p>
+		This node loads a previously created dataset reading training and test partitions.
+	</p>
+	<p>
+		The dataset can be shuffled.
+	</p>
+	<p>
+		Unnecessary data can be discarded.
+	</p>
+
+	
+</script>

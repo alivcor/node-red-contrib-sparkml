@@ -1,0 +1,138 @@
+<script type="text/javascript">
+    RED.nodes.registerType('create sparkml dataset',{
+        category: 'sparkml',
+        color: '#dac292',
+        defaults: {
+            path: {value:""},
+			sparkMaster: {value:""},
+			sparkApp: {value:""},
+			fileType: {value:""},
+			scheme: {value:""},
+			save: {value:""},
+            input: {value:""},
+            output: {value: "true", type:"boolean"},
+			trainingPartition: {value:""},
+            separator: {value:""},
+			shuffle: {value:""},
+			inferSchema: {value:""},
+            readHeaders: {value:""},
+            partitionCol: {value:""},
+			seed: {value:""}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "db.png",
+        label: function() {
+            return this.name||"create sparkml dataset";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="create sparkml dataset">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-scheme"><i class="icon-tag"></i>Scheme</label>
+        <input type="text" id="node-input-scheme" placeholder="file://">
+    </div>
+	<div class="form-row">
+        <label for="node-input-path"><i class="icon-tag"></i>Path</label>
+        <input type="text" id="node-input-path" placeholder="Path to dataset">
+    </div>
+	<div class="form-row">
+        <label for="node-input-separator"><i class="icon-tag"></i>Separator</label>
+        <input type="text" id="node-input-separator" placeholder="Separator">
+    </div>
+	<div class="form-row">
+        <label for="node-input-sparkMaster"><i class="icon-tag"></i>Spark Master</label>
+        <input type="text" id="node-input-sparkMaster" placeholder="Spark Master To Use">
+    </div>
+	<div class="form-row">
+        <label for="node-input-sparkApp"><i class="icon-tag"></i>Spark App</label>
+        <input type="text" id="node-input-sparkApp" placeholder="Spark App">
+    </div>
+	<div class="form-row">
+        <label for="node-input-fileType"><i class="icon-tag"></i>File Type</label>
+        <input type="text" id="node-input-fileType" placeholder="fileType - csv, json">
+    </div>
+	<div class="form-row">
+        <label for="node-input-partitionCol"><i class="icon-tag"></i>Partition Col</label>
+        <input type="text" id="node-input-partitionCol" placeholder="">
+    </div>
+	<div class="form-row">
+        <label for="node-input-save"><i class="icon-tag"></i>Save folder</label>
+        <input type="text" id="node-input-save" placeholder="Save folder">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-input"><i class="icon-tag"></i>Input</label>
+        <input type="text" id="node-input-input" placeholder="0">
+    </div>
+	<div class="form-row">
+        <label for="node-input-output"><i class="icon-tag"></i>Output</label>
+        <input type="checkbox" id="node-input-output">
+      </div>
+
+	<div class="form-row">
+        <label for="node-input-trainingPartition"><i class="icon-tag"></i>Training Partition Pct</label>
+        <input type="number" id="node-input-trainingPartition" placeholder="80">
+    </div>
+	<div class="form-row">
+        <label for="node-input-readHeaders"><i class="icon-tag"></i>Read Headers</label>
+        <input type="checkbox" id="node-input-readHeaders">
+    </div>
+	<div class="form-row">
+        <label for="node-input-inferSchema"><i class="icon-tag"></i>Infer Schema from File Automatically</label>
+        <input type="checkbox" id="node-input-inferSchema">
+    </div>
+	<div class="form-row">
+        <label for="node-input-shuffle"><i class="icon-tag"></i>Shuffle dataset</label>
+        <input type="checkbox" id="node-input-shuffle" disabled>
+    </div>
+	<div class="form-row">
+        <label for="node-input-seed"><i class="icon-tag"></i>Seed</label>
+        <input type="number" id="node-input-seed" placeholder="0">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="create sparkml dataset">
+	<p>A node that loads a data file and divides it into training and test partitions.</p>
+
+	<h3>Inputs</h3>
+	<dl class="message-properties">
+		<dd>
+			anything that triggers the operation.
+		</dd>
+	</dl>
+
+	<h3>Outputs</h3>
+	<ol class="node-ports">
+		<li>Standard output
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">array</span></dt>
+				<dd>the loaded dataset.</dd>
+			</dl>
+		</li>
+		<li>Standard error
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">string</span></dt>
+				<dd>the standard error of the command.</dd>
+			</dl>
+		</li>
+	</ol>
+    
+	<h3>Details</h3>
+	<p>
+		This node loads a data file, formats it and divides it into training and test partitions.
+	</p>
+	<p>
+		The dataset can be shuffled.
+	</p>
+	<p>
+		Unnecessary data can be discarded.
+	</p>
+
+	
+</script>

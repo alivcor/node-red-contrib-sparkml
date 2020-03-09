@@ -1,5 +1,5 @@
 # node-red-contrib-sparkml
-![Logo]( "Logo")
+![Logo](https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/logo.png "Logo")
 
 This is a Node-RED extension pack and contains a set of nodes which offer Spark Dataframe, SQL and machine learning functionalities. All nodes have a python/pyspark core.
 
@@ -25,5 +25,5 @@ There is an example flow and a test dataset available in the 'test' folder.
 **Tip:** You can run 'node-red' (or 'sudo node-red' if you are uning linux/mac) from the folder '.node-red/node-modules/node-red-contrib-sparkml' to avoid confusion.
 
 Example Deployment
-![Deployment]( "Deployment")
+![Deployment](https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/example_flow.png "Deployment")
 

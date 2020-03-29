@@ -19,19 +19,19 @@ This project is a WIP, and I am planning to add more nodes - as many as are avai
 
 #### Feature Extractors
 - [x] TF-IDF
-- [] Word2Vec
+- [ ] Word2Vec
 - [x] CountVectorizer
-- [] FeatureHasher
+- [ ] FeatureHasher
 
 #### Feature Transformers
 - [x] Tokenizer
-- [] StopWordsRemover
-- [] n-gram
-- [] Binarizer
-- [] PCA
+- [ ] StopWordsRemover
+- [ ] n-gram
+- [ ] Binarizer
+- [ ] PCA
 - [x] StringIndexer
-- [] IndexToString
-- [] OneHotEncoderEstimator
+- [ ] IndexToString
+- [ ] OneHotEncoderEstimator
 - [x] VectorIndexer
 - [x] SQLTransformer
 - [x] VectorAssembler

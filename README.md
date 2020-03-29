@@ -36,6 +36,21 @@ This project is a WIP, and I am planning to add more nodes - as many as are avai
 - [x] SQLTransformer
 - [x] VectorAssembler
 
+#### Classification Algorithms
+- [x] Decision Tree Classifier
+- [x] Logistic Regression
+- [x] Gradient-boosted Tree Classifier
+- [x] Multilayer Perceptron 
+- [x] Random Forest Classifier
+- [ ] Support Vector Machines
+- [ ] k-Nearest Neighbour Classifier
+
+
+#### Clustering Algorithms
+- [ ] K-Means Clustering
+- [ ] Latent Dirichlet allocation (LDA)
+
+
 ## Pre requisites
 Be sure to have a working installation of [Node-RED](https://nodered.org/ "Node-RED").  
 Install python and the following libraries:
@@ -58,3 +73,6 @@ There is an example flow and a test dataset available in the 'test' folder.
 Example Deployment
 ![Deployment](https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/example_flow.png "Deployment")
 
+## Contributors Welcome 
+
+I am looking for contributors! Feel free to open issues directly on github or email me for any questions, suggesting features or general feedback!

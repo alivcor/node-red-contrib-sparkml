@@ -1,46 +1,42 @@
 <script type="text/javascript">
-    RED.nodes.registerType('calculate term frequencies',{
+    RED.nodes.registerType('vector assembler',{
         category: 'sparkml',
-        color: '#f9ccac',
+        color: '#588c7e',
         defaults: {
-            name: {value:"tf"},
+            name: {value:"vector assembler"},
             input: {value: "true", type:"boolean"},
             output: {value: "true", type:"boolean"},
-            inputCol: {value:"words"},
-            outputCol: {value:"tf"},
-            numFeatures: {value:20}
+            inputCols: {value:"col1, col2"},
+            outputCol: {value:"features"}
         },
         inputs:1,
         outputs:2,
         icon: "font-awesome/fa-pie-chart",
         label: function() {
-            return this.name||"calculate term frequencies";
+            return this.name||"vector assembler";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="calculate term frequencies">
+<script type="text/x-red" data-template-name="vector assembler">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i>Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 	<div class="form-row">
-        <label for="node-input-inputCol"><i class="icon-tag"></i>Input Column</label>
-        <input type="text" id="node-input-inputCol" placeholder="">
+        <label for="node-input-inputCols"><i class="icon-tag"></i>Input Columns</label>
+        <input type="text" id="node-input-inputCols" placeholder="">
     </div>
 	<div class="form-row">
         <label for="node-input-outputCol"><i class="icon-tag"></i>Output Column</label>
         <input type="text" id="node-input-outputCol" placeholder="">
     </div>
-	<div class="form-row">
-        <label for="node-input-numFeatures"><i class="icon-tag"></i>Number of Features</label>
-        <input type="number" id="node-input-numFeatures" placeholder="">
-    </div>
+	
 	
 </script>
 
-<script type="text/x-red" data-help-name="calculate term frequencies">
-    <p>HashingTF is a Transformer which takes sets of terms and converts those sets into fixed-length feature vectors.</p>
+<script type="text/x-red" data-help-name="vector assembler">
+    <p>VectorAssembler is a transformer that combines a given list of columns into a single vector column.</p>
     
     <h3>Inputs</h3>
 	<dl class="message-properties">
@@ -68,7 +64,7 @@
 
 	<h3>Details</h3>
 	<p>
-		HashingTF is a Transformer which takes sets of terms and converts those sets into fixed-length feature vectors.
+		VectorAssembler is a transformer that combines a given list of columns into a single vector column
 	</p>
 	
 

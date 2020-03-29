@@ -16,10 +16,10 @@ while True:
 		# print(" Spark Master : " + json.loads(data)['sparkMaster'])
 		spark = SparkSession.builder.master(json.loads(data)['sparkMaster']).appName(json.loads(data)['sparkApp']).getOrCreate()
 
-		datasetPath = json.loads(data)['scheme'] + "://" + json.loads(data)['save'] 
+
 		# print(" Dataset Path : " + datasetPath)
 		# Prepare training and test data.
-		train, test = spark.read.parquet(datasetPath + "/train"), spark.read.parquet(datasetPath + "/test")
+		train, test = spark.read.parquet(json.loads(data)["currentTrain"]), spark.read.parquet(json.loads(data)["currentTest"])
 
 		train.cache()
 		test.cache()

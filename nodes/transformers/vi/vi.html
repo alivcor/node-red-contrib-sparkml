@@ -1,25 +1,25 @@
 <script type="text/javascript">
-    RED.nodes.registerType('calculate term frequencies',{
+    RED.nodes.registerType('vector indexer',{
         category: 'sparkml',
-        color: '#f9ccac',
+        color: '#b7d7e8',
         defaults: {
-            name: {value:"tf"},
+            name: {value:"vector indexer"},
             input: {value: "true", type:"boolean"},
             output: {value: "true", type:"boolean"},
-            inputCol: {value:"words"},
-            outputCol: {value:"tf"},
-            numFeatures: {value:20}
+            inputCol: {value:"colName"},
+            outputCol: {value:"indexedCol"},
+            maxCategories: {value:12}
         },
         inputs:1,
         outputs:2,
         icon: "font-awesome/fa-pie-chart",
         label: function() {
-            return this.name||"calculate term frequencies";
+            return this.name||"vector indexer";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="calculate term frequencies">
+<script type="text/x-red" data-template-name="vector indexer">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i>Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -33,14 +33,15 @@
         <input type="text" id="node-input-outputCol" placeholder="">
     </div>
 	<div class="form-row">
-        <label for="node-input-numFeatures"><i class="icon-tag"></i>Number of Features</label>
-        <input type="number" id="node-input-numFeatures" placeholder="">
+        <label for="node-input-maxCategories"><i class="icon-tag"></i>Max Categories</label>
+        <input type="number" id="node-input-maxCategories" placeholder="12">
     </div>
+	
 	
 </script>
 
-<script type="text/x-red" data-help-name="calculate term frequencies">
-    <p>HashingTF is a Transformer which takes sets of terms and converts those sets into fixed-length feature vectors.</p>
+<script type="text/x-red" data-help-name="vector indexer">
+    <p>VectorIndexer helps index categorical features in datasets of Vectors. </p>
     
     <h3>Inputs</h3>
 	<dl class="message-properties">
@@ -68,7 +69,7 @@
 
 	<h3>Details</h3>
 	<p>
-		HashingTF is a Transformer which takes sets of terms and converts those sets into fixed-length feature vectors.
+		VectorIndexer helps index categorical features in datasets of Vectors. 
 	</p>
 	
 

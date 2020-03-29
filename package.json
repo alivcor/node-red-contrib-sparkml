@@ -27,7 +27,12 @@
 			"create sparkml dataset": "nodes/dataset/create-dataset/create-dataset.js",
 			"load sparkml dataset": "nodes/dataset/load-dataset/load-dataset.js",
 			"tokenize column": "nodes/transformers/tokenizer/tokenizer.js",
-			"calculate term frequencies": "nodes/transformers/tf/tf.js"
+			"calculate term frequencies": "nodes/transformers/tf/tf.js",
+			"calculate inverse document frequency": "nodes/transformers/idf/idf.js",
+			"string indexer": "nodes/transformers/si/si.js",
+			"vector indexer": "nodes/transformers/vi/vi.js",
+			"vector assembler": "nodes/transformers/va/va.js",
+			"sql transformer": "nodes/transformers/sql/sql.js"
 		}
 	},
 	"dependencies": {

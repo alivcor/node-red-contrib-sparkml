@@ -31,4 +31,6 @@ while True:
 	spark.stop()
 	# print('Dataset created.')
 	# print("\n\n")
+	config["currentTrain"] = config['scheme'] + "://" + config['save'] + "/train/"
+	config["currentTest"] = config['scheme'] + "://" + config['save'] + "/test/"
 	print(json.dumps(config))

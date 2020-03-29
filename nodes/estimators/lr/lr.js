@@ -1,5 +1,5 @@
 module.exports = function(RED){
-	function multilayerPerceptron(config){
+	function logisticRegression(config){
 		const path = require('path')
 		const utils = require('../../../utils/utils')
 
@@ -13,13 +13,12 @@ module.exports = function(RED){
 			labelCol: config.labelCol,
 			featuresCol: config.featuresCol,
 			maxIter: config.maxIter,
-			layers: config.layers,
-			blockSize: config.blockSize,
-			seed: config.seed,
-			estimatorType: "mpc"
+			regParam: config.regParam,
+			elasticNetParam: config.elasticNetParam,
+			estimatorType: "lr"
 		}
 
 		utils.run(RED, node, config)
 	}
-	RED.nodes.registerType("multilayer perceptron", multilayerPerceptron)
+	RED.nodes.registerType("logistic regression", logisticRegression)
 }

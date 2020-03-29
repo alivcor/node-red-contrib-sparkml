@@ -1,5 +1,5 @@
 module.exports = function(RED){
-	function multilayerPerceptron(config){
+	function gradientBoostedTreeClassifier(config){
 		const path = require('path')
 		const utils = require('../../../utils/utils')
 
@@ -12,14 +12,10 @@ module.exports = function(RED){
 			// path: config.path,
 			labelCol: config.labelCol,
 			featuresCol: config.featuresCol,
-			maxIter: config.maxIter,
-			layers: config.layers,
-			blockSize: config.blockSize,
-			seed: config.seed,
-			estimatorType: "mpc"
+			estimatorType: "gbt"
 		}
 
 		utils.run(RED, node, config)
 	}
-	RED.nodes.registerType("multilayer perceptron", multilayerPerceptron)
+	RED.nodes.registerType("gradient boosted tree classifier", gradientBoostedTreeClassifier)
 }

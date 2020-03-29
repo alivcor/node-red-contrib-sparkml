@@ -89,6 +89,7 @@ module.exports = {
 				node.msg.topic = node.topic
 			}
 			//send to python child
+			
 			python(node)
 		}
 
@@ -102,7 +103,8 @@ module.exports = {
 				handle(msg)
 			}
 		})
-
+		
+		
 		//when node is closed, kill child process
 		node.on('close', (done) => {
 			node.status(status.NONE)

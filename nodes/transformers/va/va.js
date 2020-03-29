@@ -4,6 +4,7 @@ module.exports = function(RED){
 		const utils = require('../../../utils/utils')
 
 		var node = this;
+		
 
 		//set configurations
 		node.file = __dirname + '/../transformers.py'
@@ -12,9 +13,11 @@ module.exports = function(RED){
 			// path: config.path,
 			inputCols: config.inputCols,
 			outputCol: config.outputCol,
-			transformerType: "va"
+			transformerType: "va" 
 		}
+		
 
+		
 		utils.run(RED, node, config)
 	}
 	RED.nodes.registerType("vector assembler", vectorAssembler)

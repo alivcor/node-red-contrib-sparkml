@@ -28,7 +28,7 @@ while True:
 			train.cache()
 			test.cache()
 			
-			lr = LogisticRegression(maxIter=config["maxIter"], regParam=config["regParam"], elasticNetParam=config["elasticNetParam"])
+			lr = LogisticRegression(featuresCol=config["featuresCol"], labelCol=config["labelCol"], maxIter=config["maxIter"], regParam=config["regParam"], elasticNetParam=config["elasticNetParam"])
 
 			# Fit the model
 			lrModel = lr.fit(train)
@@ -52,7 +52,7 @@ while True:
 			train.cache()
 			test.cache()
 			
-			classifier = DecisionTreeClassifier()
+			classifier = DecisionTreeClassifier(featuresCol=config["featuresCol"], labelCol=config["labelCol"])
 
 			# Fit the model
 			model = classifier.fit(train)
@@ -76,7 +76,7 @@ while True:
 			train.cache()
 			test.cache()
 			
-			classifier = RandomForestClassifier(numTrees=config["numTrees"])
+			classifier = RandomForestClassifier(numTrees=config["numTrees"], featuresCol=config["featuresCol"], labelCol=config["labelCol"])
 
 			# Fit the model
 			model = classifier.fit(train)
@@ -100,7 +100,7 @@ while True:
 			train.cache()
 			test.cache()
 			
-			classifier = GBTClassifier()
+			classifier = GBTClassifier(featuresCol=config["featuresCol"], labelCol=config["labelCol"])
 
 			# Fit the model
 			model = classifier.fit(train)
@@ -124,7 +124,7 @@ while True:
 			train.cache()
 			test.cache()
 			
-			classifier = MultilayerPerceptronClassifier(maxIter=config["maxIter"], layers=[int(x.strip()) for x in config["layers"].split(",")], blockSize=config["blockSize"], seed=config["seed"])
+			classifier = MultilayerPerceptronClassifier(featuresCol=config["featuresCol"], labelCol=config["labelCol"], maxIter=config["maxIter"], layers=[int(x.strip()) for x in config["layers"].split(",")], blockSize=config["blockSize"], seed=config["seed"])
 
 			# Fit the model
 			model = classifier.fit(train)

@@ -1,0 +1,73 @@
+<script type="text/javascript">
+    RED.nodes.registerType('decision tree classifier',{
+        category: 'sparkml',
+        color: '#80ced6',
+        defaults: {
+            name: {value:"decision tree classifier"},
+            input: {value: "true", type:"boolean"},
+            output: {value: "true", type:"boolean"},
+            labelCol: {value:"label"},
+            featuresCol: {value:"features"}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "font-awesome/fa-pie-chart",
+        label: function() {
+            return this.name||"decision tree classifier";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="decision tree classifier">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-featuresCol"><i class="icon-tag"></i>Features Column</label>
+        <input type="text" id="node-input-featuresCol" placeholder="">
+    </div>
+	<div class="form-row">
+        <label for="node-input-labelCol"><i class="icon-tag"></i>Label / Target Column</label>
+        <input type="text" id="node-input-labelCol" placeholder="">
+    </div>
+
+	
+	
+</script>
+
+<script type="text/x-red" data-help-name="decision tree classifier">
+    <p>Decision trees are a popular family of classification and regression methods. More information about the spark.ml implementation can be found further in the section on decision trees.</p>
+    
+    <h3>Inputs</h3>
+	<dl class="message-properties">
+		<dt>payload
+			<span class="property-type">array</span>
+		</dt>
+		<dd>the dataset path</dd>
+	</dl>
+
+	<h3>Outputs</h3>
+	<ol class="node-ports">
+		<li>Standard output
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">array</span></dt>
+				<dd>the loaded spark dataset.</dd>
+			</dl>
+		</li>
+		<li>Standard error
+			<dl class="message-properties">
+				<dt>payload <span class="property-type">string</span></dt>
+				<dd>the standard error of the command.</dd>
+			</dl>
+		</li>
+	</ol>
+
+	<h3>Details</h3>
+	<p>
+		Decision trees are a popular family of classification and regression methods. More information about the spark.ml implementation can be found further in the section on decision trees.
+	</p>
+	
+
+	
+</script>

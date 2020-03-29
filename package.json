@@ -32,7 +32,13 @@
 			"string indexer": "nodes/transformers/si/si.js",
 			"vector indexer": "nodes/transformers/vi/vi.js",
 			"vector assembler": "nodes/transformers/va/va.js",
-			"sql transformer": "nodes/transformers/sql/sql.js"
+			"sql transformer": "nodes/transformers/sql/sql.js",
+			"decision tree classifier": "nodes/estimators/dtc/dtc.js",
+			"gradient boosted tree classifier": "nodes/estimators/gbt/gbt.js",
+			"logistic regression": "nodes/estimators/lr/lr.js",
+			"multilayer perceptron classifier": "nodes/estimators/mpc/mpc.js",
+			"random forest classifier": "nodes/estimators/rfc/rfc.js",
+			"export predictions as csv": "nodes/exporters/predictions_csv/predictions_csv.js"
 		}
 	},
 	"dependencies": {

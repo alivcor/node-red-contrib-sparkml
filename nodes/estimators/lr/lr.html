@@ -1,28 +1,27 @@
 <script type="text/javascript">
-    RED.nodes.registerType('multilayer perceptron classifier',{
+    RED.nodes.registerType('logistic regression',{
         category: 'sparkml',
-        color: '#92a8d1',
+        color: '#f18973',
         defaults: {
-            name: {value:"multilayer perceptron classifier"},
+            name: {value:"logistic regression"},
             input: {value: "true", type:"boolean"},
             output: {value: "true", type:"boolean"},
             labelCol: {value:"label"},
             featuresCol: {value:"features"},
             maxIter: {value:"100"},
-            layers: {value:"4,6,3,4"},
-            blockSize: {value:"128"},
-            seed: {value:"1234"}
+            regParam: {value:"0.5"},
+            elasticNetParam: {value:"0.2"}
         },
         inputs:1,
         outputs:2,
         icon: "font-awesome/fa-pie-chart",
         label: function() {
-            return this.name||"multilayer perceptron classifier";
+            return this.name||"logistic regression";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="multilayer perceptron classifier">
+<script type="text/x-red" data-template-name="logistic regression">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i>Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -40,23 +39,19 @@
         <input type="number" id="node-input-maxIter" placeholder="100">
     </div>
 	<div class="form-row">
-        <label for="node-input-layers"><i class="icon-tag"></i>Layers</label>
-        <input type="text" id="node-input-layers" placeholder="3, 7, 4, 4">
+        <label for="node-input-regParam"><i class="icon-tag"></i>regParam</label>
+        <input type="number" id="node-input-regParam" placeholder="0.5">
     </div>
 	<div class="form-row">
-        <label for="node-input-blockSize"><i class="icon-tag"></i>blockSize</label>
-        <input type="number" id="node-input-blockSize" placeholder="128">
-    </div>
-	<div class="form-row">
-        <label for="node-input-seed"><i class="icon-tag"></i>seed</label>
-        <input type="number" id="node-input-seed" placeholder="1234">
+        <label for="node-input-elasticNetParam"><i class="icon-tag"></i>elasticNetParam</label>
+        <input type="number" id="node-input-elasticNetParam" placeholder="0.3">
     </div>
 	
 	
 </script>
 
-<script type="text/x-red" data-help-name="multilayer perceptron classifier">
-    <p>Multilayer perceptron classifier (MLPC) is a classifier based on the feedforward artificial neural network. MLPC consists of multiple layers of nodes.</p>
+<script type="text/x-red" data-help-name="logistic regression">
+    <p>Multiclass classification is supported via multinomial logistic (softmax) regression.</p>
     
     <h3>Inputs</h3>
 	<dl class="message-properties">
@@ -84,7 +79,7 @@
 
 	<h3>Details</h3>
 	<p>
-		Multilayer perceptron classifier (MLPC) is a classifier based on the feedforward artificial neural network. MLPC consists of multiple layers of nodes.
+		Multiclass classification is supported via multinomial logistic (softmax) regression
 	</p>
 	
 

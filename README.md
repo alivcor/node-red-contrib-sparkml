@@ -18,23 +18,23 @@ Allows Drag & Drop Machine Learning with Spark. Provides Visual Interface.
 This project is a WIP, and I am planning to add more nodes - as many as are available in Spark Transformers and Estimators.
 
 #### Feature Extractors
-[x] TF-IDF
-[] Word2Vec
-[x] CountVectorizer
-[] FeatureHasher
+- [x] TF-IDF
+- [] Word2Vec
+- [x] CountVectorizer
+- [] FeatureHasher
 
 #### Feature Transformers
-[x] Tokenizer
-[] StopWordsRemover
-[] n-gram
-[] Binarizer
-[] PCA
-[x] StringIndexer
-[] IndexToString
-[] OneHotEncoderEstimator
-[x] VectorIndexer
-[x] SQLTransformer
-[x] VectorAssembler
+- [x] Tokenizer
+- [] StopWordsRemover
+- [] n-gram
+- [] Binarizer
+- [] PCA
+- [x] StringIndexer
+- [] IndexToString
+- [] OneHotEncoderEstimator
+- [x] VectorIndexer
+- [x] SQLTransformer
+- [x] VectorAssembler
 
 ## Pre requisites
 Be sure to have a working installation of [Node-RED](https://nodered.org/ "Node-RED").  

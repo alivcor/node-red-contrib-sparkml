@@ -11,9 +11,6 @@ Allows Drag & Drop Machine Learning with Spark. Provides Visual Interface.
 ![Drag Drop Spark ML](https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/drag_drop_sparkml.png "drag_drop_sparkml")
 
 
-<center><img src="https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/parameters_ui.png" width="400"><img src="https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/spark_ui.png" width="400"></center>
-
-
 
 ## Functionalities
 

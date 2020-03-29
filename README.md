@@ -1,5 +1,5 @@
 # node-red-contrib-sparkml
-![Logo](https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/logo.png "Logo" =100x20)
+![Logo](https://github.com/alivcor/node-red-contrib-sparkml/raw/master/images/logo.png "Logo" | width=100)
 
 This is a Node-RED extension pack and contains a set of nodes which offer Spark Dataframe, SQL and machine learning functionalities. All nodes have a python/pyspark core.
 
